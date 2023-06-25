@@ -38,4 +38,9 @@ public class Start extends Calculation {
     public void setBigCountVol(double bigCountVol) {
         this.bigCountVol = bigCountVol;
     }
+
+    public static void main(String[] args) {
+
+    }
 }
+

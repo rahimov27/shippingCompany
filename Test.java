@@ -5,7 +5,7 @@ import BackEndProject.method.Calculation;
 import BackEndProject.method.Start;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 
 public class Test {
@@ -69,11 +69,15 @@ public class Test {
         System.out.println("---------------------------------------------------------------------");
 
 
-
+        // Print the results
         Start objects = new Start(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
-        objects.bestShipping(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
-        objects.shippingPrice(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
+//        objects.bestShipping(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
+//        objects.shippingPrice(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
 
+        objects.addOrder(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
+
+
+        objects.printOrder(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
 
     }
 
