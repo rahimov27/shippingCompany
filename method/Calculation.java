@@ -1,13 +1,13 @@
-package BackEndProject.method;
+package SagdiiRahimovHW.method;
 
 
-import BackEndProject.items.Item;
+import SagdiiRahimovHW.items.Item;
 
 import java.util.ArrayList;
 
 
 public class Calculation extends Item {
-    //Attributes for item
+    //Attributes
     private String nameOfItem;
     private double sizeOfItem1;
     private double sizeOfItem2;
@@ -31,7 +31,6 @@ public class Calculation extends Item {
     }
 
     //Getter and Setter
-
     @Override
     public String getNameOfItem() {
         return nameOfItem;
@@ -129,8 +128,8 @@ public class Calculation extends Item {
                 smallContainer += 1;
             }
         }
-//        System.out.println(bigContainer + " big containers");
-//        System.out.println(smallContainer + " small containers");
+        System.out.println(bigContainer + " big containers");
+        System.out.println(smallContainer + " small containers");
         return 0 ;
     }
 
@@ -149,7 +148,7 @@ public class Calculation extends Item {
             }
         }
         double totalPrice = (bigContainer * 1800) + (smallContainer * 1000);
-//        System.out.println("Shipping price is: " + totalPrice + " Euro");
+        System.out.println("Shipping price is: " + totalPrice + " Euro");
         return totalPrice;
     }
 
@@ -162,7 +161,7 @@ public class Calculation extends Item {
         listOfItem.add(this.sizeOfItem3);
         listOfItem.add(this.weightOfItem);
         listOfItem.add(this.quantityOfItem);
-//        System.out.println(listOfItem);
+        System.out.println(listOfItem);
         return listOfItem;
     }
 
@@ -186,8 +185,7 @@ public class Calculation extends Item {
         myTotalPrice.add(totalPrice);
         myTotalPrice.add(bigContainer);
         myTotalPrice.add(smallContainer);
-        System.out.println("Total price" + myTotalPrice );
-//        System.out.println("Shipping price is: " + totalPrice + " Euro");
+        System.out.println("Shipping price is: " + totalPrice + " Euro");
         return totalPrice;
 
     }
@@ -220,92 +218,7 @@ public class Calculation extends Item {
         double totalPrice = (bigContainer * 1800) + (smallContainer * 1000);
         System.out.println("Your order: " + bigContainer + " big containers " + "and " + smallContainer + " small containers");
         System.out.println("Shipping price is: " + totalPrice + " Euro");
-
-
-
     }
-
-
-
-    //    public double shippingPrice(double sumVolume,double smallContainerVolume, double bigContainerVolume){
-//        double smallCon = 0;
-//        double bigCon = 0;
-//        while (bigContainerVolume < sumVolume){
-//            bigCon += 1;
-//            sumVolume -= bigContainerVolume;
-//            if (smallContainerVolume > sumVolume){
-//                smallCon += 1;
-//            }
-//        }
-//        double price = bigCon * 1800  smallCon * 1000;
-//        System.out.println(bigCon + " big containers");
-//        System.out.println(smallCon + " small containers");
-//        return 0;
-//    }
-//    public void addItems(String name, double size1, double size2,
-//                           double size3, double weight, double quantity){
-//        name = this.nameOfItem;
-//        size1 = this.sizeOfItem1;
-//        size2 = this.sizeOfItem2;
-//        size3 = this.sizeOfItem3;
-//        weight = this.weightOfItem;
-//        quantity = this.quantityOfItem;
-//        System.out.println("The name of item: " + name +
-//                ", size1: " + size1 + ", size2: " + size2
-//                + ", size3: " + size3 + ", weight: " + weight
-//                        + ", quantity: " + quantity
-//                );
-//
-//    };
-
-
-
-    // bestShipping Method
-//    public double bestShipping(double sumVolume,double smallContainerVolume, double bigContainerVolume){
-//        double smallCon = 0;
-//        double bigCon = 0;
-//        double reminder = 0;
-//        ArrayList<Double> myReminder = new ArrayList<>();
-//        if (bigContainerVolume < sumVolume){
-//            bigCon += 1;
-//            sumVolume -= bigContainerVolume;
-//        }
-//        else reminder += sumVolume;
-//
-//        System.out.println("This is reminder" + myReminder);
-//
-//
-//        System.out.println(bigCon + " big containers");
-//        System.out.println(smallCon + " small containers");
-//        return 0;
-//    }
-
-//    public double bestShipping(double totalVolumeObj1,
-//                               double totalVolumeObj2, double totalVolumeObj3,
-//                               double totalVolumeObj4,double smallContainerVolume, double bigContainerVolume){
-//        double sumVolume = totalVolumeObj1 + totalVolumeObj2 + totalVolumeObj3 + totalVolumeObj4;
-//
-//        double bigContainer = 0;
-//        double smallContainer = 0;
-//        while (bigContainerVolume < sumVolume){
-//            bigContainer += 1;
-//            sumVolume -= bigContainerVolume;
-//            if (smallContainer > sumVolume){
-//                smallContainer += 1;
-//            }
-//            else if (sumVolume < smallContainerVolume){
-//                smallContainer += 1;
-//            }
-//        }
-//        System.out.println(bigContainer + " big containers");
-//        System.out.println(smallContainer + " small containers");
-//        return 0;
-//    }
-
-
-
-
-
 
 
 }

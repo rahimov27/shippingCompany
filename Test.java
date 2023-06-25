@@ -1,8 +1,8 @@
-package BackEndProject;
+package SagdiiRahimovHW;
 
-import BackEndProject.container.Container;
-import BackEndProject.method.Calculation;
-import BackEndProject.method.Start;
+import SagdiiRahimovHW.container.Container;
+import SagdiiRahimovHW.method.Calculation;
+import SagdiiRahimovHW.method.Start;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        //Creating objects
+        //Creating item objects
         Calculation obj1 = new Calculation("Laptop", 60.0,
                 50.0, 50.0,6.5, 100);
         Calculation obj2 = new Calculation("Mouse", 30.0,
@@ -30,28 +30,29 @@ public class Test {
         Container containerBig = new Container("Big Container", 2.59,
                 2.43, 12.01, 1800);
 
-        ArrayList<Double> totalWeightList = new ArrayList<>();
 
+        //Adding total weight of all items in Arraylist to find sum of weight
+        ArrayList<Double> totalWeightList = new ArrayList<>();
         totalWeightList.add(obj1.totalWeightOfItem(obj1.getWeightOfItem(),obj1.getQuantityOfItem()));
         totalWeightList.add(obj2.totalWeightOfItem(obj2.getWeightOfItem(),obj2.getQuantityOfItem()));
         totalWeightList.add(obj3.totalWeightOfItem(obj3.getWeightOfItem(),obj3.getQuantityOfItem()));
         totalWeightList.add(obj4.totalWeightOfItem(obj4.getWeightOfItem(),obj4.getQuantityOfItem()));
 
+        //For loop to find sum of weight
         double sumWeight = 0;
         for (int i = 0; i < totalWeightList.size();i++)
             sumWeight += totalWeightList.get(i);
         System.out.println("Total weight of all items is: " + sumWeight + " kg");
         System.out.println("---------------------------------------------------------------------");
-        //////////////////////////////////////////////////////////////////////
 
-        //////////////////////////////////////////////////////////////////////
+        //Adding total volume of all items in ArrayList to find sum of volume
         ArrayList<Double> totalVolumeList = new ArrayList<>();
-
         totalVolumeList.add(obj1.totalVolumeOfItem(obj1.getSizeOfItem1(),obj1.getSizeOfItem2(),obj1.getSizeOfItem3(),obj1.getQuantityOfItem()));
         totalVolumeList.add(obj2.totalVolumeOfItem(obj1.getSizeOfItem1(),obj1.getSizeOfItem2(),obj1.getSizeOfItem3(),obj1.getQuantityOfItem()));
         totalVolumeList.add(obj3.totalVolumeOfItem(obj1.getSizeOfItem1(),obj1.getSizeOfItem2(),obj1.getSizeOfItem3(),obj1.getQuantityOfItem()));
         totalVolumeList.add(obj4.totalVolumeOfItem(obj1.getSizeOfItem1(),obj1.getSizeOfItem2(),obj1.getSizeOfItem3(),obj1.getQuantityOfItem()));
 
+        //For loop to find sum of volume
         double sumVolume = 0;
         for (int i = 0; i < totalVolumeList.size();i++)
             sumVolume += totalVolumeList.get(i);
@@ -69,15 +70,24 @@ public class Test {
         System.out.println("---------------------------------------------------------------------");
 
 
-        // Print the results
+        // Create object
         Start objects = new Start(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
-//        objects.bestShipping(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
-//        objects.shippingPrice(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
 
+        //bestShipping method
+        objects.bestShipping(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
+        System.out.println("---------------------------------------------------------------------");
+
+        //shippingPrice method
+        objects.shippingPrice(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
+        System.out.println("---------------------------------------------------------------------");
+
+        //addOrder method
         objects.addOrder(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
+        System.out.println("---------------------------------------------------------------------");
 
-
+        //printOrder method
         objects.printOrder(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
+        System.out.println("---------------------------------------------------------------------");
 
     }
 
