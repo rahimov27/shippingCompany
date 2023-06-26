@@ -80,20 +80,20 @@ abstract class Test {
         obj4.printItem();
 
 //        //bestShipping method
-//        objects.bestShipping(sumVolume,sumWeight, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
-//        System.out.println("---------------------------------------------------------------------");
+        objects.bestShipping(sumVolume,sumWeight, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
+        System.out.println("---------------------------------------------------------------------");
 
         //shippingPrice method
         objects.shippingPrice(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
         System.out.println("---------------------------------------------------------------------");
 
         //addOrder method
-//        objects.addOrder(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
-//        System.out.println("---------------------------------------------------------------------");
-//
-//        //printOrder method
-//        objects.printOrder(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
-//        System.out.println("---------------------------------------------------------------------");
+        objects.addOrder(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
+        System.out.println("---------------------------------------------------------------------");
+
+        //printOrder method
+        objects.printOrder(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
+        System.out.println("---------------------------------------------------------------------");
 
 
     }
