@@ -39,8 +39,5 @@ public class Start extends Calculation {
         this.bigCountVol = bigCountVol;
     }
 
-    public static void main(String[] args) {
-
-    }
 }
 

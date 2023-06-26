@@ -7,8 +7,7 @@ import SagdiiRahimovHW.method.Start;
 import java.util.ArrayList;
 
 
-
-public class Test {
+abstract class Test {
 
     public static void main(String[] args) {
 
@@ -33,30 +32,30 @@ public class Test {
 
         //Adding total weight of all items in Arraylist to find sum of weight
         ArrayList<Double> totalWeightList = new ArrayList<>();
-        totalWeightList.add(obj1.totalWeightOfItem(obj1.getWeightOfItem(),obj1.getQuantityOfItem()));
-        totalWeightList.add(obj2.totalWeightOfItem(obj2.getWeightOfItem(),obj2.getQuantityOfItem()));
-        totalWeightList.add(obj3.totalWeightOfItem(obj3.getWeightOfItem(),obj3.getQuantityOfItem()));
-        totalWeightList.add(obj4.totalWeightOfItem(obj4.getWeightOfItem(),obj4.getQuantityOfItem()));
+        totalWeightList.add(obj1.totalWeightOfItem());
+        totalWeightList.add(obj2.totalWeightOfItem());
+        totalWeightList.add(obj3.totalWeightOfItem());
+        totalWeightList.add(obj4.totalWeightOfItem());
 
         //For loop to find sum of weight
         double sumWeight = 0;
         for (int i = 0; i < totalWeightList.size();i++)
             sumWeight += totalWeightList.get(i);
-        System.out.println("Total weight of all items is: " + sumWeight + " kg");
+        System.out.println("Total weight of all items is: " + sumWeight + " kg" + " <---------");
         System.out.println("---------------------------------------------------------------------");
 
         //Adding total volume of all items in ArrayList to find sum of volume
         ArrayList<Double> totalVolumeList = new ArrayList<>();
-        totalVolumeList.add(obj1.totalVolumeOfItem(obj1.getSizeOfItem1(),obj1.getSizeOfItem2(),obj1.getSizeOfItem3(),obj1.getQuantityOfItem()));
-        totalVolumeList.add(obj2.totalVolumeOfItem(obj1.getSizeOfItem1(),obj1.getSizeOfItem2(),obj1.getSizeOfItem3(),obj1.getQuantityOfItem()));
-        totalVolumeList.add(obj3.totalVolumeOfItem(obj1.getSizeOfItem1(),obj1.getSizeOfItem2(),obj1.getSizeOfItem3(),obj1.getQuantityOfItem()));
-        totalVolumeList.add(obj4.totalVolumeOfItem(obj1.getSizeOfItem1(),obj1.getSizeOfItem2(),obj1.getSizeOfItem3(),obj1.getQuantityOfItem()));
+        totalVolumeList.add(obj1.totalVolumeOfItem());
+        totalVolumeList.add(obj2.totalVolumeOfItem());
+        totalVolumeList.add(obj3.totalVolumeOfItem());
+        totalVolumeList.add(obj4.totalVolumeOfItem());
 
         //For loop to find sum of volume
         double sumVolume = 0;
         for (int i = 0; i < totalVolumeList.size();i++)
             sumVolume += totalVolumeList.get(i);
-        System.out.println("Total volume of all items is : " + sumVolume + " cubic meter");
+        System.out.println("Total volume of all items is : " + sumVolume + " cubic meter" + " <---------");
         System.out.println("---------------------------------------------------------------------");
 
 
@@ -73,8 +72,15 @@ public class Test {
         // Create object
         Start objects = new Start(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
 
+
+        //printItem method
+        obj1.printItem();
+        obj2.printItem();
+        obj3.printItem();
+        obj4.printItem();
+
         //bestShipping method
-        objects.bestShipping(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
+        objects.bestShipping(sumVolume,sumWeight, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
         System.out.println("---------------------------------------------------------------------");
 
         //shippingPrice method
@@ -88,6 +94,7 @@ public class Test {
         //printOrder method
         objects.printOrder(sumVolume, containerSmall.calcVolumeOfContainer(), containerBig.calcVolumeOfContainer());
         System.out.println("---------------------------------------------------------------------");
+
 
     }
 

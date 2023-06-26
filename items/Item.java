@@ -99,14 +99,6 @@ public class Item {
         return solution;
     }
 
-//    public double findWeight(){
-//
-//        double solution = this.quantityOfItem * this.weightOfItem;
-//        System.out.println("The weight of item is:" + solution);
-//        return solution;
-//    }
-
-
 }
 
 

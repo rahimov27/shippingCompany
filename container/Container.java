@@ -80,13 +80,7 @@ public class Container {
         public double calcVolumeOfContainer(){
             double sol = length * wide * height;
 //            System.out.println("The volume of " + this.nameOfContainer + " " + sol + " cubic metre");
-
             return sol;
         }
-
-
-
-
-
     }
 
