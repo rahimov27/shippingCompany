@@ -1,7 +1,7 @@
 package SagdiiRahimovHW.method;
 
 
-import SagdiiRahimovHW.container.Container;
+
 import SagdiiRahimovHW.items.Item;
 
 import java.util.ArrayList;
@@ -137,32 +137,22 @@ public class Calculation extends Item {
     }
 
     // shippingPrice method
-    public double shippingPrice(double sumVolume,double smallContainerVolume, double bigContainerVolume){
-        ArrayList<Double> bigContainerList = new ArrayList<>();
-        ArrayList<Double> smallContainerList = new ArrayList<>();
-
+    public double shippingPrice(double sumVolume, double smallContainerVolume, double bigContainerVolume){
         double bigContainer = 0;
         double smallContainer = 0;
         while (bigContainerVolume < sumVolume){
-            bigContainer += 1;
+            bigContainer += 1800;
             sumVolume -= bigContainerVolume;
-            if (smallContainer > sumVolume){
-                smallContainer += 1;
             }
-            else if (sumVolume < smallContainerVolume){
-                smallContainer += 1;
-            }
+        if (smallContainerVolume > sumVolume && sumVolume < smallContainerVolume ){
+            smallContainer += 1000;
+        }
+        else if (totalWeightOfItem() < 500){
+            smallContainer += 1200;
+        }
 
-        }
-        bigContainerList.add(bigContainer);
-        smallContainerList.add(smallContainer);
-        for (int i = 0; i < bigContainerList.size(); i++){
-//            System.out.println(bigContainerList.get(i));
-        }
-        for (int i = 0; i < smallContainerList.size(); i++){
-//            System.out.println(smallContainerList.get(i));
-        }
-        double totalPrice = (bigContainer * 1800) + (smallContainer * 1000);
+
+        double totalPrice = bigContainer + smallContainer;
         System.out.println("Shipping price is: " + totalPrice + " Euro");
         return totalPrice;
     }
